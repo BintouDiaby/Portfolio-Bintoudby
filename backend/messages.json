@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Test User",
+    "email": "test@example.com",
+    "subject": "Salut",
+    "message": "Ceci est un test",
+    "receivedAt": "2026-03-06T09:06:27.567Z"
+  },
+  {
+    "name": "Test User",
+    "email": "test@example.com",
+    "subject": "Salut",
+    "message": "Ceci est un test",
+    "receivedAt": "2026-03-06T09:07:00.785Z"
+  },
+  {
+    "name": "Diaby Bintou",
+    "email": "bdby0706@gmail.com",
+    "subject": "message",
+    "message": "hi",
+    "receivedAt": "2026-03-06T10:57:09.312Z"
+  },
+  {
+    "name": "Diaby Nabintou",
+    "email": "bdby0706@gmail.com",
+    "subject": "Demande",
+    "message": "hi Diaby",
+    "receivedAt": "2026-03-06T11:11:14.289Z"
+  }
+]

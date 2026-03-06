@@ -1,0 +1,36 @@
+<section class="home hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="container hero-inner">
+    <div class="hero-grid">
+      <div class="hero-text" data-aos="fade-right">
+        <p class="welcome_text">HELLO!</p>
+        <h2 class="hero-subtitle">Je suis</h2>
+        <h1 class="hero-title">Diaby Nabintou</h1>
+        <p class="hero-lead">Étudiante en Licence 3 Informatique — Génie Logiciel. Je conçois des applications web et mobiles centrées utilisateur, avec attention à l'UI/UX et l'accessibilité.</p>
+        <div class="hero-ctas">
+          <button id="open-cv-preview" class="btn btn-primary me-2">Voir CV</button>
+          <a class="btn btn-outline-light" href="#contact">Me contacter</a>
+          <a class="btn btn-link d-none" id="go-to-cv" href="/cv">Aller à la page CV</a>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left">
+        <img src="/assets/images/image.png" alt="Photo de Diaby Nabintou" class="hero-photo" />
+      </div>
+    </div>
+  </div>
+  <!-- CV Preview Modal -->
+  <div id="cv-modal" class="cv-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1100;align-items:center;justify-content:center;">
+    <div style="width:90%;max-width:900px;background:#0f1113;padding:1rem;border-radius:8px;color:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+        <strong>Aperçu du CV — Diaby Nabintou</strong>
+        <div>
+          <a id="cv-open-full" class="btn btn-sm btn-outline-light me-2" href="/cv">Ouvrir la page CV</a>
+          <button id="cv-close" class="btn btn-sm btn-secondary">Fermer</button>
+        </div>
+      </div>
+      <div style="height:70vh;">
+        <iframe id="cv-iframe" src="/assets/cv/CV-DIABY-NABINTOU.pdf" style="width:100%;height:100%;border:0;border-radius:4px;" title="CV PDF preview"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

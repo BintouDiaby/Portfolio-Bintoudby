@@ -1,0 +1,17 @@
+.cv-page { padding: 60px 0; }
+.cv-page h2 { margin-bottom: 8px; }
+.cv-page p { color: #bbb; }
+
+/* Styles pour la photo sur la page CV */
+.cv-photo {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: 8px solid #f6f2ef;
+	box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+	object-fit: cover;
+	transform: rotate(-2deg);
+	transition: transform .25s ease, box-shadow .25s ease;
+}
+.cv-photo:hover { transform: rotate(0deg) scale(1.02); box-shadow: 0 18px 40px rgba(0,0,0,0.28); }
+
