@@ -1,0 +1,37 @@
+<section class="blog-article container mt-5">
+  <div class="row">
+    <div class="col-12">
+      @if (loading()) {
+        <div class="text-center py-5">
+          <p class="lead">Chargement de l'article...</p>
+        </div>
+      }
+      @if (error()) {
+        <div class="alert alert-danger">
+          <p>{{ error() }}</p>
+          <a href="/blog" class="btn btn-outline-secondary">Retour au blog</a>
+        </div>
+      }
+      @if (article(); as article) {
+        <h2>{{ article.title }}</h2>
+        <div class="mb-3 text-muted">
+          {{ article.date }} • par {{ article.author }}
+        </div>
+        @if (article.cover) {
+          <div class="mb-4">
+            <img
+              [src]="article.cover"
+              [alt]="article.title"
+              class="img-fluid"
+              loading="lazy"
+            />
+          </div>
+        }
+        <div class="article-content" [innerHTML]="article.content"></div>
+        <div class="mt-4">
+          <a href="/blog" class="btn btn-outline-secondary">Retour au blog</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

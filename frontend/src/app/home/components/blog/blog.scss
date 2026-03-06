@@ -1,0 +1,141 @@
+/* Styles for blog tiles */
+.news-item {
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.25);
+    transform: translateY(-4px);
+  }
+}
+
+.news-cover {
+  height: 220px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.news-content {
+  background: transparent;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-title {
+  h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #00d4ff;
+      }
+    }
+  }
+}
+
+.news-meta {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+
+  .news-meta-single {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.readMore {
+  margin-top: auto;
+  padding-top: 1rem;
+
+  .btn {
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Blog article page */
+.blog-article {
+  padding: 2rem 0;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .article-content {
+    margin: 2rem 0;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+    }
+
+    ul,
+    ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    strong {
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Reload button */
+.reload-articles {
+  margin-top: 1rem;
+}

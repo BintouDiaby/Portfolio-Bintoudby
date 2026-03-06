@@ -1,0 +1,65 @@
+<div class="section facts backgound-section" style="background-image: url(https://via.placeholder.com/1920x1080)" data-aos-id="facts">
+
+  <div class="container">
+    <div class="row">
+      @if (stats(); as statistics) {
+        <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
+          <div class="fact-single text-center">
+            <div class="fact-icon">
+              <span class="mbri-timer"></span>
+            </div>
+            <div class="fact-info">
+              <span class="tmcounter" [attr.data-from]="0" [attr.data-to]="statistics.years_experience" data-speed="1500">{{ statistics.years_experience }}</span>+
+            </div>
+            <div class="fact-meta">
+              <span>Years Experience</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
+          <div class="fact-single text-center">
+            <div class="fact-icon">
+              <span class="mbri-smile-face"></span>
+            </div>
+            <div class="fact-info">
+              <span class="tmcounter" [attr.data-from]="0" [attr.data-to]="statistics.happy_clients" data-speed="1500">{{ statistics.happy_clients }}</span>+
+            </div>
+            <div class="fact-meta">
+              <span>Happy Clients</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
+          <div class="fact-single text-center">
+            <div class="fact-icon">
+              <span class="mbri-magic-stick"></span>
+            </div>
+            <div class="fact-info">
+              <span class="tmcounter" [attr.data-from]="0" [attr.data-to]="statistics.projects_done" data-speed="1500">{{ statistics.projects_done }}</span>
+            </div>
+            <div class="fact-meta">
+              <span>Projects Done</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 mt-3 mt-lg-0">
+          <div class="fact-single text-center">
+            <div class="fact-icon">
+              <span class="mbri-save"></span>
+            </div>
+            <div class="fact-info">
+              <span class="tmcounter" [attr.data-from]="0" [attr.data-to]="statistics.downloads" data-speed="1500">{{ statistics.downloads }}</span>
+            </div>
+            <div class="fact-meta">
+              <span>Downloads</span>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <div class="col-12 text-center py-5">
+          <p class="lead">Chargement des statistiques...</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>

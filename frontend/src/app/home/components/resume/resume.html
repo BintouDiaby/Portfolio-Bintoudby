@@ -1,0 +1,87 @@
+<section class="resume" id="resume">
+
+  <div class="container d-flex flex-column justify-content-between h-100 ">
+
+    <div class="section-title flex-grow-1">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center">
+            <h2  data-aos="heading-show" class="text_background">
+              My Experience
+              <span class="heading_background">Resume</span>
+            </h2>
+            <p class="m-0">If you are going to use a passage of Lorem Ipsum</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-content flex-grow-1">
+      @if (resumeData(); as resume) {
+        <div class="row mt-4">
+          <div class="col-lg-6">
+            <h3 class="mb-4">Formations</h3>
+            <ul class="list-inline resume-list">
+              @for (edu of resume.education; track edu.id) {
+                <li>
+                  <h4 class="mb-2">{{ edu.school }} — {{ edu.title }}</h4>
+                  <span class="time">{{ edu.time }}</span>
+                  @if (edu.description) {
+                    <p class="my-2">{{ edu.description }}</p>
+                  }
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+            <h3 class="mb-4">Projets & Expérience</h3>
+            <ul class="list-inline resume-list">
+              @for (exp of resume.experience; track exp.id) {
+                <li>
+                  <h4 class="mb-2">{{ exp.title }}</h4>
+                  <span class="time">{{ exp.time }}</span>
+                  <p class="my-2">{{ exp.description }}</p>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          @for (skill of resume.skills; track skill.id) {
+            <div class="col-lg-6">
+              <div class="skill d-flex flex-row pr-4 pr-sm-3 px-3 mb-4">
+                <div class="skill-progress flex-grow-1">
+                  <div class="progresss-info d-flex flex-row justify-content-between mt-2 mb-1">
+                    <span>{{ skill.name }}</span>
+                    <span class="text-right progress-percent">{{ skill.percentage }}%</span>
+                  </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      [attr.data-percent]="skill.percentage"
+                      [attr.aria-valuenow]="skill.percentage"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      [style.width.%]="skill.percentage">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="row mt-4">
+          <div class="col-12 text-center py-5">
+            <p class="lead">Chargement du CV...</p>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+
+</section>

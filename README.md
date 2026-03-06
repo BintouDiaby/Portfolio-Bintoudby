@@ -1,59 +1,172 @@
-# Portfolio
+# Portfolio Diaby Nabintou - Full Stack
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+Un portfolio professionnel avec **Django Backend** et **Angular Frontend**.
 
-## Development server
+## 📁 Structure du Projet
 
-To start a local development server, run:
-
-```bash
-ng serve
+```
+Portfolio-Bintoudby/
+├── backend/              # Django API (Port 3001)
+│   ├── api/             # App Django avec modèles & vues
+│   ├── backend/         # Configuration Django
+│   ├── db.sqlite3       # Base de données
+│   ├── manage.py
+│   ├── populate.py      # Script pour remplir la BD
+│   └── requirements.txt
+│
+├── frontend/            # Angular Application (Port 4200)
+│   ├── src/            # Code source Angular
+│   ├── angular.json
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── node_modules/
+│
+└── README.md           # Ce fichier
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Quick Start
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 1. Backend (Django)
 
 ```bash
-ng generate component component-name
+cd backend
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+python populate.py        # Remplir la BD avec les données
+python manage.py runserver 3001
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**Admin**: http://localhost:3001/admin/
+- Username: `admin`
+- Password: `admin123`
+
+### 2. Frontend (Angular)
 
 ```bash
-ng generate --help
+cd frontend
+npm install
+npm start
 ```
 
-## Building
+**URL**: http://localhost:4200/
 
-To build the project run:
+---
+
+## 📊 API Endpoints
+
+| Méthode | URL | Description |
+|---------|-----|-------------|
+| GET | `/api/health` | Health check |
+| GET | `/api/articles` | Liste articles |
+| GET | `/api/articles/:slug` | Article détail |
+| POST | `/api/contact` | Formulaire contact |
+| GET | `/api/statistics` | Stats (années, clients, projets, downloads) |
+| GET | `/api/resume` | Expérience (éducation, skills, projets) |
+
+---
+
+## 🎮 Gestion du Contenu
+
+Tout se gère via l'**Admin Django**: http://localhost:3001/admin/
+
+- 📝 **Articles** - Blog posts
+- 💬 **Messages** - Contact form submissions
+- 📊 **Statistics** - Modify portfolio metrics
+- 🎓 **Education** - Formations
+- 💼 **Experience** - Projets & expérience
+- 🎯 **Skills** - Compétences avec %
+
+---
+
+## 📚 Documentation
+
+- `backend/ADMIN_GUIDE.md` - Guide complet de l'admin Django
+- `backend/API_ENDPOINTS.md` - Documentation API détaillée
+- `backend/README_FULL.md` - Guide complet du projet
+
+---
+
+## 💾 Remplir la Base de Données
 
 ```bash
-ng build
+cd backend
+source venv/bin/activate
+python populate.py
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Cela charge:
+- ✅ 5 articles de blog
+- ✅ 4 messages de contact
+- ✅ 2 formations
+- ✅ 2 expériences
+- ✅ 4 compétences
+- ✅ Les statistiques du portfolio
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🔑 Credentials par Défaut
+
+**Django Admin**:
+- Username: `admin`
+- Password: `admin123`
+
+⚠️ **Changez le mot de passe en production!**
 
 ```bash
-ng test
+cd backend
+python manage.py changepassword admin
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🛠️ Technology Stack
 
+### Backend
+- **Framework**: Django 6.0.3
+- **Database**: SQLite
+- **API**: REST (JsonResponse)
+- **Email**: SMTP (configurable)
+
+### Frontend
+- **Framework**: Angular 20+
+- **Language**: TypeScript
+- **State**: Angular Signals
+- **Styling**: SCSS
+
+---
+
+## 📱 Features
+
+✅ Blog avec articles dynamiques
+✅ Pages articles détail
+✅ Section expérience/CV
+✅ Formulaire contact
+✅ Admin interface complète
+✅ Cache localStorage (24h)
+✅ Responsive design
+✅ CORS enabled
+✅ Email support
+
+---
+
+## 🚀 Déploiement
+
+### Backend
 ```bash
-ng e2e
+pip install gunicorn
+gunicorn backend.wsgi:application --bind 0.0.0.0:3001
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Frontend
+```bash
+cd frontend
+npm run build
+# Output: dist/
+```
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Status**: ✅ Fully Functional
+**Last Updated**: 2026-03-06
